@@ -9,12 +9,12 @@ from SaitamaRobot import (
     CERT_PATH,
     DONATION_LINK,
     LOGGER,
-    OWNER_ID,
+    OWNER_ID=("1410558285"),
     PORT,
-    TOKEN,
+    TOKEN=("1909570525:AAF9ghHMR5jnAZAZVm99lpL633cbUqn5m4g"),
     URL,
     WEBHOOK,
-    SUPPORT_CHAT,
+    SUPPORT_CHAT=("https://t.me/CrimsonDragon"),
     dispatcher,
     StartTime,
     telethn,
@@ -71,14 +71,14 @@ def get_readable_time(seconds: int) -> str:
 
 
 PM_START_TEXT = """
-Hey hi {}, I'm {}!
-I am an Anime themed group management bot.
-Built by weebs for weebs, I specialize in managing anime eccentric communities!
+Hey hi {https://telegra.ph/file/eb183a86b5fc974b56d99.jpg}, I'm {Valt Aoi}!
+I am an Beyblade themed group management bot.
+Built by Bot Creaters , I specialize in managing beyblade eccentric communities!
 """
 
 HELP_STRINGS = """
-Hey there! My name is *{}*.
-I'm a Hero For Fun and help admins manage their groups with One Punch! Have a look at the following for an idea of some of \
+Hey there! My name is *{Valt Aoi}*.
+I'm a Hero For Fun and help admins manage their groups with Valt ! Have a look at the following for an idea of some of \
 the things I can help you with.
 
 *Main* commands available:
@@ -97,12 +97,12 @@ And the following:
     "" if not ALLOW_EXCL else "\nAll commands can either be used with / or !.\n",
 )
 
-SAITAMA_IMG = "https://telegra.ph/file/46e6d9dfcb3eb9eae95d9.jpg"
+SAITAMA_IMG = "https://telegra.ph/file/eb183a86b5fc974b56d99.jpg"
 
 DONATE_STRING = """Heya, glad to hear you want to donate!
- You can support the project via [Paypal](ko-fi.com/sawada) or by contacting @Sawada \
+ You can support the project via [Paypal](ko-fi.com/sawada) or by contacting @cimsonflashs \
  Supporting isnt always financial! \
- Those who cannot provide monetary support are welcome to help us develop the bot at @OnePunchDev."""
+ Those who cannot provide monetary support are welcome to help us develop the bot at @valtaoithebladerbot."""
 
 IMPORTED = {}
 MIGRATEABLE = []
@@ -115,7 +115,7 @@ CHAT_SETTINGS = {}
 USER_SETTINGS = {}
 
 for module_name in ALL_MODULES:
-    imported_module = importlib.import_module("SaitamaRobot.modules." + module_name)
+    imported_module = importlib.import_module(".valtaoithebladerbotmodules." + module_name)
     if not hasattr(imported_module, "__mod_name__"):
         imported_module.__mod_name__ = imported_module.__name__
 
@@ -209,7 +209,7 @@ def start(update: Update, context: CallbackContext):
         else:
             first_name = update.effective_user.first_name
             update.effective_message.reply_photo(
-                SAITAMA_IMG,
+                SAITAMA_IMG=("https://telegra.ph/file/eb183a86b5fc974b56d99.jpg"),
                 PM_START_TEXT.format(
                     escape_markdown(first_name), escape_markdown(context.bot.first_name),
                 ),
@@ -219,8 +219,8 @@ def start(update: Update, context: CallbackContext):
                     [
                         [
                             InlineKeyboardButton(
-                                text="☑️ Add me",
-                                url="t.me/{}?startgroup=true".format(
+                                text=" Add Valt Aoi to  your Group ",
+                                url="http://t.me/valtaoithebladerbot?startgroup=true".format(
                                     context.bot.username,
                                 ),
                             ),
@@ -228,27 +228,24 @@ def start(update: Update, context: CallbackContext):
                         [
                             InlineKeyboardButton(
                                 text="🚑 Support",
-                                url=f"https://t.me/{SUPPORT_CHAT}",
+                                url=f"https://t.me/CrimsonDragon{SUPPORT_CHAT}",
                             ),
                             InlineKeyboardButton(
                                 text="🔔 Updates",
-                                url="https://t.me/OnePunchUpdates",
+                                url="https://t.me/botcreaterss",
+                            ),
+                        ],
+                    
+                            ),
+                            InlineKeyboardButton(
+                                text="Channnel",
+                                url="https://t.me/FreeLogogiveway",
                             ),
                         ],
                         [
                             InlineKeyboardButton(
-                                text="🧾 Getting Started",
-                                url="https://t.me/OnePunchUpdates/29",
-                            ),
-                            InlineKeyboardButton(
-                                text="🗄 Source code",
-                                url="https://github.com/AnimeKaizoku/SaitamaRobot",
-                            ),
-                        ],
-                        [
-                            InlineKeyboardButton(
-                                text="☠️ Kaizoku Network",
-                                url="https://t.me/Kaizoku/4",
+                                text="Beyblade",
+                                url="https://t.me/beybladefunchat",
                             ),
                         ],
                     ],
